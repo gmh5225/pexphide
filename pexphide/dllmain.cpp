@@ -45,3 +45,10 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
+
+#include <iostream>
+extern "C" __declspec(dllexport) void __stdcall myFunc(int a, int b)
+{
+    int sum = a + b;
+    std::cout << "The sum of " << a << " and " << b << " is " << sum << std::endl;
+}
